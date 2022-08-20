@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="4.0" type="plugin" method="upgrade" group="hikashop" client="site">
+    <name>PLG_BFFORCECATALOGUEMODE_XML_TITLE</name>
+    <creationDate>August 2020</creationDate>
+    <version>1.0.0</version>
+    <author>Jonathan Brain</author>
+    <authorEmail>brainforge.uk@btinternet.com</authorEmail>
+    <authorUrl>http://www.brainforge.co.uk</authorUrl>
+    <copyright>Copyright (C) 2022 Jonathan Brain - All rights reserved.</copyright>
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+    <description>PLG_BFFORCECATALOGUEMODE_XML_DESCRIPTION</description>
+
+    <files>
+        <filename plugin="bfforcecataloguemode">bfforcecataloguemode.php</filename>
+        <filename>bforderdeliverydatefield.php</filename>
+        <folder>classes</folder>
+        <folder>fields</folder>
+        <folder>forms</folder>
+        <folder>help</folder>
+        <folder>language</folder>
+        <folder>layouts</folder>
+    </files>
+
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="mode"
+                       type="radio"
+                       default="1"
+                       label="PLG_BFFORCECATALOGUEMODE_MODE_LABEL"
+                       >
+                    <option value="1">PLG_BFFORCECATALOGUEMODE_ALLOW_OPTION</option>
+                    <option value="0">PLG_BFFORCECATALOGUEMODE_DENY_OPTION</option>
+                </field>
+
+                <field name="usergroups"
+                       type="usergrouplist"
+                       label="PLG_BFFORCECATALOGUEMODE_USERGROUPS_LABEL"
+                       description="PLG_BFFORCECATALOGUEMODE_USERGROUPS_DESC"
+                       layout="joomla.form.field.list-fancy-select"
+                       multiple="true"
+                />
+
+                <field name="onHikashopBeforeDisplayView"
+                       type="text"
+                       label="PLG_BFFORCECATALOGUEMODE_BEFOREDISPLAY_LABEL"
+                       description="PLG_BFFORCECATALOGUEMODE_MODULEDISPLAY_DESC"
+                       hint="PLG_BFFORCECATALOGUEMODE_MODULEDISPLAY_HINT"
+                />
+
+                <field name="onHikashopAfterDisplayView"
+                       type="text"
+                       label="PLG_BFFORCECATALOGUEMODE_AFTERDISPLAY_LABEL"
+                       description="PLG_BFFORCECATALOGUEMODE_MODULEDISPLAY_DESC"
+                       hint="PLG_BFFORCECATALOGUEMODE_MODULEDISPLAY_HINT"
+                />
+            </fieldset>
+        </fields>
+    </config>
+
+    <updateservers>
+        <server
+                type="extension"
+                priority="1"
+                name="PLG_BFFORCECATALOGUEMODE_XML_TITLE">
+            https://brainforge.co.uk/component/bfupdater?element=plg_hikashop_bfforcecataloguemode.xml
+        </server>
+    </updateservers>
+</extension>
